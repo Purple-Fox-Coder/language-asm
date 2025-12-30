@@ -1,6 +1,6 @@
 {
   "name": "pulsar-language-asm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modern-Tree-Sitter generic assembly support.",
   "keywords": [
     "language",
