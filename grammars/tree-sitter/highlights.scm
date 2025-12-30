@@ -2,31 +2,29 @@
 
 ; General
 (label
-  [(ident) (word)] @label)
+  [(ident) (word)] @entity.name.label.asm)
 
-(reg) @variable.builtin
+(reg) @support.storage.type.builtin.asm
 
 (meta
-  kind: (_) @function.builtin)
+  kind: (_) @support.other.namespace.asm)
 
 (instruction
-  kind: (_) @function.builtin)
+  kind: (_) @entity.name.function.asm)
 
 (const
-  name: (word) @constant)
+  name: (word) @constant.numeric.asm)
 
 ; Comments
-[
-  (line_comment)
-  (block_comment)
-] @comment @spell
+(line_comment) @comment.line.asm
+(block_comment) @comment.block.asm
 
 ; Literals
-(int) @number
+(int) @number.literal.constant.asm
 
-(float) @number.float
+(float) @number.float.literal.constant.asm
 
-(string) @string
+(string) @string.quoted.double.asm
 
 ; Keywords
 [
@@ -38,7 +36,7 @@
   "rel"
   "label"
   "const"
-] @keyword
+] @keyword.control.asm
 
 ; Operators & Punctuation
 [
@@ -46,20 +44,23 @@
   "-"
   "*"
   "/"
+] @keyword.operator.arithmetic.asm
+
+[
   "%"
   "|"
   "^"
   "&"
-] @operator
+] @keyword.operator.bitwise.asm
 
 [
   "("
   ")"
   "["
   "]"
-] @punctuation.bracket
+] @punctuation.definition.bracket.asm
 
 [
   ","
   ":"
-] @punctuation.delimiter
+] @punctuation.seperator.asm
